@@ -1,5 +1,5 @@
-# Machine-Learning-Course
-碩士班機器學習課程
+# Machine-Learning-and-Deep-Learning-Course
+碩士班機器學習與深度學習課程
 
 Google雲端硬碟中也有相關程式與資料
 
