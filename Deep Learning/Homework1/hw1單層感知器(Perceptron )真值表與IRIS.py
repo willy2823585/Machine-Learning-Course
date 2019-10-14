@@ -68,7 +68,6 @@ inputs_or = np.array([0,0])
 print("輸入[0,0 輸出]",P_OR.predict(inputs_or))
 
 
-
 #用於訓練真值表XOR的LABEL
 label_xor = [0,1,1,0]
 P_XOR = Perceptron(2)
@@ -141,4 +140,21 @@ classifier.fit(train_x, train_y, batch_size=100, nb_epoch=200)
 results = classifier.evaluate(test_x, test_y)
 print('Final test set loss: {:4f}'.format(results[0]))
 print('Final test set accuracy: {:4f}'.format(results[1]))
+
+print("--------------------------------------------------")
+
+#keras use in 真值表
+#AND 
+truthtable = Sequential()
+X = np.array([[1,1],[1,0],[0,1],[0,0]])
+y = np.array([1,0,0,0])
+
+truthtable.add(Dense(1, input_shape=(2,), activation='hard_sigmoid', name='input_layer'))
+#truthtable.add(Dense(1, activation='softmax', name='output'))
+truthtable.compile(optimizer, loss='binary_crossentropy', metrics=['accuracy'])
+truthtable.fit(X,y,batch_size=100, nb_epoch=300)
+
+X_Predict = np.array([[1,1],[1,0],[0,1],[0,0]])
+Y_Result = truthtable.predict(X_Predict)
+print(Y_Result)
 
