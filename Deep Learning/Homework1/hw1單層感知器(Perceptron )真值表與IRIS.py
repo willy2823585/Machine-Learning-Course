@@ -77,7 +77,7 @@ class SLPTruthtableBuild(object):
         Y = label
         self.truthtablemodel.add(Dense(1,input_shape=(2,),activation='sigmoid', name='output_layer'))
 #        self.truthtablemodel.add(Dense(1, activation='hard_sigmoid', name='output_layer'))
-        self.truthtablemodel.compile(optimizer='Adam', loss='binary_crossentropy', metrics=['accuracy'])
+        self.truthtablemodel.compile(optimizer='Adam', loss='binary_crossentropy', metrics=['binary_accuracy'])
         self.truthtablemodel.fit(X,Y,batch_size=4, nb_epoch=2000)
     def Predict(self,name):  
         X_Predict = np.array([[1,1],[1,0],[0,1],[0,0]])
