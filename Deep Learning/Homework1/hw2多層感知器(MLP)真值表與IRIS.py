@@ -41,9 +41,9 @@ train_x, test_x, train_y, test_y = train_test_split(x, y, test_size=0.20)
 # Initialising the ANN
 classifier = Sequential()
 #Create neural network
-classifier.add(Dense(10, input_shape=(4,), activation='relu', name='input_layer'))
-classifier.add(Dense(10, input_shape=(4,), activation='relu', name='hidden_layer'))
-classifier.add(Dense(10, input_shape=(4,), activation='elu', name='hidden_layer2'))
+classifier.add(Dense(10, input_shape=(4,), activation='relu', name='hidden_layer1'))
+classifier.add(Dense(10, input_shape=(4,), activation='relu', name='hidden_layer2'))
+classifier.add(Dense(10, input_shape=(4,), activation='elu', name='hidden_layer3'))
 # Adding dropout to prevent overfitting
 classifier.add(Dropout(p=0.1))
 # Adding the output layer
@@ -70,9 +70,9 @@ class MLPTruthtableBuild(object):
     def TruthtableBuildTrain(self,label):  #傳入Truthtable 與他的label值(OR AND XOR)分別不同
         X = np.array([[1,1],[1,0],[0,1],[0,0]])
         Y = label
-        self.truthtablemodel.add(Dense(10, input_shape=(2,), activation='relu', name='input_layer'))
-        self.truthtablemodel.add(Dense(20, activation='hard_sigmoid', name='hidden_layer'))
-        self.truthtablemodel.add(Dense(1, activation='hard_sigmoid', name='output_layer'))
+        self.truthtablemodel.add(Dense(10, input_shape=(2,), activation='relu', name='hidden_layer1'))
+        self.truthtablemodel.add(Dense(20, activation='hard_sigmoid', name='hidden_layer2'))
+        self.truthtablemodel.add(Dense(1, activation='hard_sigmoid', name='hidden_layer3'))
         self.truthtablemodel.compile(optimizer='Adam', loss='binary_crossentropy', metrics=['accuracy'])
         self.truthtablemodel.fit(X,Y,batch_size=4, nb_epoch=1000)
     def Predict(self,name):  
