@@ -72,7 +72,7 @@ class MLPTruthtableBuild(object):
         Y = label
         self.truthtablemodel.add(Dense(10, input_shape=(2,), activation='relu', name='hidden_layer1'))
         self.truthtablemodel.add(Dense(20, activation='hard_sigmoid', name='hidden_layer2'))
-        self.truthtablemodel.add(Dense(1, activation='hard_sigmoid', name='hidden_layer3'))
+        self.truthtablemodel.add(Dense(1, activation='hard_sigmoid', name='out'))
         self.truthtablemodel.compile(optimizer='Adam', loss='binary_crossentropy', metrics=['accuracy'])
         self.truthtablemodel.fit(X,Y,batch_size=4, nb_epoch=1000)
     def Predict(self,name):  
