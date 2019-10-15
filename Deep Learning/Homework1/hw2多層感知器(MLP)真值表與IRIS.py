@@ -87,16 +87,16 @@ AndMLP.TruthtableBuildTrain(andlabel)
 AND="AND Table"
 AndMLP.Predict(AND)
 
-#OrMLP = MLPTruthtableBuild()
-#orlabel = np.array([1,1,1,0])
-#OrMLP.TruthtableBuildTrain(orlabel)
-#OR="OR Table"
-#OrMLP.Predict(OR)
-#
-#XorMLP = MLPTruthtableBuild()
-#xorlabel = np.array([0,1,1,0])
-#XorMLP.TruthtableBuildTrain(xorlabel)
-#XOR = "XOR Table"
-#XorMLP.Predict(XOR)
+OrMLP = MLPTruthtableBuild()
+orlabel = np.array([1,1,1,0])
+OrMLP.TruthtableBuildTrain(orlabel)
+OR="OR Table"
+OrMLP.Predict(OR)
+
+XorMLP = MLPTruthtableBuild()
+xorlabel = np.array([0,1,1,0])
+XorMLP.TruthtableBuildTrain(xorlabel)
+XOR = "XOR Table"
+XorMLP.Predict(XOR)
 
 
