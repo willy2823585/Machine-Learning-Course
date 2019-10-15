@@ -81,22 +81,22 @@ class MLPTruthtableBuild(object):
         print("Test [1,1],[1,0],[0,1],[0,0]:\n",name,Y_Result)
 
 
-#AndMLP = MLPTruthtableBuild()
-#andlabel = np.array([1,0,0,0])
-#AndMLP.TruthtableBuildTrain(andlabel)
-#AND="AND\n"
-#AndMLP.Predict(AND)
+AndMLP = MLPTruthtableBuild()
+andlabel = np.array([1,0,0,0])
+AndMLP.TruthtableBuildTrain(andlabel)
+AND="AND\n"
+AndMLP.Predict(AND)
 
 OrMLP = MLPTruthtableBuild()
 orlabel = np.array([1,1,1,0])
 OrMLP.TruthtableBuildTrain(orlabel)
 OR="OR\n"
 OrMLP.Predict(OR)
-#
-#XorMLP = MLPTruthtableBuild()
-#xorlabel = np.array([0,1,1,0])
-#XorMLP.TruthtableBuildTrain(xorlabel)
-#XOR = "XOR\n"
-#XorMLP.Predict(XOR)
-#
+
+XorMLP = MLPTruthtableBuild()
+xorlabel = np.array([0,1,1,0])
+XorMLP.TruthtableBuildTrain(xorlabel)
+XOR = "XOR\n"
+XorMLP.Predict(XOR)
+
 
