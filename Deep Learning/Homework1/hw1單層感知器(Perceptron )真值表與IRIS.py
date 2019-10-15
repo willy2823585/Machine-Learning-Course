@@ -15,18 +15,18 @@ from keras.models import Sequential
 from keras.layers import Dense
 from keras.optimizers import Adam
 from keras.layers import Dropout
-from keras import backend as K
-from tensorflow.python.client import device_lib
-import tensorflow as tf
-from keras.backend.tensorflow_backend import set_session
+#from keras import backend as K
+#from tensorflow.python.client import device_lib
+#import tensorflow as tf
+#from keras.backend.tensorflow_backend import set_session
 #GPU CODE
-config = tf.ConfigProto()
-config.gpu_options.allocator_type = 'BFC' #A "Best-fit with coalescing" algorithm, simplified from a version of dlmalloc.
-config.gpu_options.per_process_gpu_memory_fraction = 0.3
-config.gpu_options.allow_growth = True
-set_session(tf.Session(config=config)) 
-K.tensorflow_backend._get_available_gpus()
-print(device_lib.list_local_devices())
+#config = tf.ConfigProto()
+#config.gpu_options.allocator_type = 'BFC' #A "Best-fit with coalescing" algorithm, simplified from a version of dlmalloc.
+#config.gpu_options.per_process_gpu_memory_fraction = 0.3
+#config.gpu_options.allow_growth = True
+#set_session(tf.Session(config=config)) 
+#K.tensorflow_backend._get_available_gpus()
+#print(device_lib.list_local_devices())
 
 
 iris_data = load_iris() # load the iris dataset
