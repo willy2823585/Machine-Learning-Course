@@ -15,12 +15,12 @@ from keras.models import Sequential
 from keras.layers import Dense
 from keras.optimizers import Adam
 from keras.layers import Dropout
-from keras import backend as K
-from tensorflow.python.client import device_lib
-import tensorflow as tf
-sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
-K.tensorflow_backend._get_available_gpus()
-print(device_lib.list_local_devices())
+#from keras import backend as K
+#from tensorflow.python.client import device_lib
+#import tensorflow as tf
+#sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
+#K.tensorflow_backend._get_available_gpus()
+#print(device_lib.list_local_devices())
 iris_data = load_iris() # load the iris dataset
 
 print('Example data: ')
@@ -71,7 +71,7 @@ class MLPTruthtableBuild(object):
         X = np.array([[1,1],[1,0],[0,1],[0,0]])
         Y = label
         self.truthtablemodel.add(Dense(10, input_shape=(2,), activation='relu', name='input_layer'))
-        self.truthtablemodel.add(Dense(15, activation='hard_sigmoid', name='hidden_layer'))
+        self.truthtablemodel.add(Dense(20, activation='hard_sigmoid', name='hidden_layer'))
         self.truthtablemodel.add(Dense(1, activation='hard_sigmoid', name='output_layer'))
         self.truthtablemodel.compile(optimizer='Adam', loss='binary_crossentropy', metrics=['accuracy'])
         self.truthtablemodel.fit(X,Y,batch_size=4, nb_epoch=1000)
@@ -81,22 +81,22 @@ class MLPTruthtableBuild(object):
         print("Test [1,1],[1,0],[0,1],[0,0]:\n",name,Y_Result)
 
 
-AndMLP = MLPTruthtableBuild()
-andlabel = np.array([1,0,0,0])
-AndMLP.TruthtableBuildTrain(andlabel)
-AND="AND\n"
-AndMLP.Predict(AND)
+#AndMLP = MLPTruthtableBuild()
+#andlabel = np.array([1,0,0,0])
+#AndMLP.TruthtableBuildTrain(andlabel)
+#AND="AND\n"
+#AndMLP.Predict(AND)
 
 OrMLP = MLPTruthtableBuild()
 orlabel = np.array([1,1,1,0])
 OrMLP.TruthtableBuildTrain(orlabel)
 OR="OR\n"
 OrMLP.Predict(OR)
-
-XorMLP = MLPTruthtableBuild()
-xorlabel = np.array([0,1,1,0])
-XorMLP.TruthtableBuildTrain(xorlabel)
-XOR = "XOR\n"
-XorMLP.Predict(XOR)
-
+#
+#XorMLP = MLPTruthtableBuild()
+#xorlabel = np.array([0,1,1,0])
+#XorMLP.TruthtableBuildTrain(xorlabel)
+#XOR = "XOR\n"
+#XorMLP.Predict(XOR)
+#
 
