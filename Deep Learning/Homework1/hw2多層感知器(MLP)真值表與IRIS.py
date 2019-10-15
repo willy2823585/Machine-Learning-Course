@@ -70,11 +70,11 @@ class MLPTruthtableBuild(object):
     def TruthtableBuildTrain(self,label):  #傳入Truthtable 與他的label值(OR AND XOR)分別不同
         X = np.array([[1,1],[1,0],[0,1],[0,0]])
         Y = label
-        self.truthtablemodel.add(Dense(1, input_shape=(2,), activation='hard_sigmoid', name='input_layer'))
-        self.truthtablemodel.add(Dense(1, activation='hard_sigmoid', name='hidden_layer'))
+        self.truthtablemodel.add(Dense(10, input_shape=(2,), activation='relu', name='input_layer'))
+        self.truthtablemodel.add(Dense(15, activation='hard_sigmoid', name='hidden_layer'))
         self.truthtablemodel.add(Dense(1, activation='hard_sigmoid', name='output_layer'))
         self.truthtablemodel.compile(optimizer='Adam', loss='binary_crossentropy', metrics=['accuracy'])
-        self.truthtablemodel.fit(X,Y,batch_size=4, nb_epoch=200)
+        self.truthtablemodel.fit(X,Y,batch_size=4, nb_epoch=1000)
     def Predict(self,name):  
         X_Predict = np.array([[1,1],[1,0],[0,1],[0,0]])
         Y_Result = self.truthtablemodel.predict(X_Predict)
@@ -87,16 +87,16 @@ AndMLP.TruthtableBuildTrain(andlabel)
 AND="AND Table"
 AndMLP.Predict(AND)
 
-OrMLP = MLPTruthtableBuild()
-orlabel = np.array([1,1,1,0])
-OrMLP.TruthtableBuildTrain(orlabel)
-OR="OR Table"
-OrMLP.Predict(OR)
-
-XorMLP = MLPTruthtableBuild()
-xorlabel = np.array([0,1,1,0])
-XorMLP.TruthtableBuildTrain(xorlabel)
-XOR = "XOR Table"
-XorMLP.Predict(XOR)
+#OrMLP = MLPTruthtableBuild()
+#orlabel = np.array([1,1,1,0])
+#OrMLP.TruthtableBuildTrain(orlabel)
+#OR="OR Table"
+#OrMLP.Predict(OR)
+#
+#XorMLP = MLPTruthtableBuild()
+#xorlabel = np.array([0,1,1,0])
+#XorMLP.TruthtableBuildTrain(xorlabel)
+#XOR = "XOR Table"
+#XorMLP.Predict(XOR)
 
 
