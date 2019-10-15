@@ -78,25 +78,25 @@ class MLPTruthtableBuild(object):
     def Predict(self,name):  
         X_Predict = np.array([[1,1],[1,0],[0,1],[0,0]])
         Y_Result = self.truthtablemodel.predict(X_Predict)
-        print("Test:",name,Y_Result)
+        print("Test [1,1],[1,0],[0,1],[0,0]:\n",name,Y_Result)
 
 
 AndMLP = MLPTruthtableBuild()
 andlabel = np.array([1,0,0,0])
 AndMLP.TruthtableBuildTrain(andlabel)
-AND="AND Table"
+AND="AND\n"
 AndMLP.Predict(AND)
 
 OrMLP = MLPTruthtableBuild()
 orlabel = np.array([1,1,1,0])
 OrMLP.TruthtableBuildTrain(orlabel)
-OR="OR Table"
+OR="OR\n"
 OrMLP.Predict(OR)
 
 XorMLP = MLPTruthtableBuild()
 xorlabel = np.array([0,1,1,0])
 XorMLP.TruthtableBuildTrain(xorlabel)
-XOR = "XOR Table"
+XOR = "XOR\n"
 XorMLP.Predict(XOR)
 
 
