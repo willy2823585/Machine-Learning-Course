@@ -99,4 +99,3 @@ XorMLP.TruthtableBuildTrain(xorlabel)
 XOR = "XOR\n"
 XorMLP.Predict(XOR)
 
-
